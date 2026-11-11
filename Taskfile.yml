@@ -11,10 +11,12 @@ tasks:
   default:
     cmds:
       - task: test
+
   test:
     deps: [format]
     cmds:
       - "{{.MVNW}} clean verify"
+
   format:
     cmds:
       - "{{.MVNW}} spotless:apply"
@@ -22,6 +24,7 @@ tasks:
   build:
     cmds:
       - "{{.MVNW}} -pl catalog-service spring-boot:build-image -DskipTests"
+      - "{{.MVNW}} -pl order-service spring-boot:build-image -DskipTests"
 
   start_infra:
     cmds:
