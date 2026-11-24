@@ -3,7 +3,7 @@ name: Order Service
 on:
   push:
     paths:
-      - catalog-service/**
+      - order-service/**
     branches:
       - '**'
 
